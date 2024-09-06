@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v3
       - name: Black Duck Full Scan
         if: ${{ github.event_name != 'pull_request' }}
-        uses: synopsys-sig/synopsys-action@download_bridge_test
+        uses: synopsys-sig/synopsys-action@SIGINT-864
 
         ### Use below configuration to set specific detect environment variables
         env:
@@ -50,24 +50,24 @@ jobs:
   
           ### Uncomment below configuration if Synopsys Bridge diagnostic files needs to be uploaded
           include_diagnostics: true
-      - name: Black Duck PR Scan
-        if: ${{ github.event_name == 'pull_request' }}
-        uses: synopsys-sig/synopsys-action@v1.13.0
+      # - name: Black Duck PR Scan
+      #   if: ${{ github.event_name == 'pull_request' }}
+      #   uses: synopsys-sig/synopsys-action@v1.13.0
   
-         ### Use below configuration to set specific detect environment variables
-        env:
-           DETECT_PROJECT_NAME: ${{ github.event.repository.name }}
-        with:
-           blackduck_url: ${{ vars.BLACKDUCK_URL }}
-           blackduck_token: ${{ secrets.BLACKDUCK_TOKEN }}
-           blackduck_scan_full: false
+      #    ### Use below configuration to set specific detect environment variables
+      #   env:
+      #      DETECT_PROJECT_NAME: ${{ github.event.repository.name }}
+      #   with:
+      #      blackduck_url: ${{ vars.BLACKDUCK_URL }}
+      #      blackduck_token: ${{ secrets.BLACKDUCK_TOKEN }}
+      #      blackduck_scan_full: false
   
-           ### Below configuration is used to enable automatic pull request comment based on Black Duck scan result
-           blackduck_prComment_enabled: true
-           github_token: ${{ secrets.GITHUB_TOKEN }} 
-           # Mandatory when blackduck_automation_prcomment is set to 'true'
+      #      ### Below configuration is used to enable automatic pull request comment based on Black Duck scan result
+      #      blackduck_prComment_enabled: true
+      #      github_token: ${{ secrets.GITHUB_TOKEN }} 
+      #      # Mandatory when blackduck_automation_prcomment is set to 'true'
            
-           # project_directory: ${{ vars.PROJECT_DIRECTORY }}
+      #      # project_directory: ${{ vars.PROJECT_DIRECTORY }}
  
-           ### Uncomment below configuration if Synopsys Bridge diagnostic files needs to be uploaded
-           include_diagnostics: true
+      #      ### Uncomment below configuration if Synopsys Bridge diagnostic files needs to be uploaded
+      #      include_diagnostics: true

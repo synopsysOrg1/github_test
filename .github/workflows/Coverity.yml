@@ -14,14 +14,14 @@ jobs:
       
       - name: Coverity Full Scan
         if: ${{ github.event_name != 'pull_request' }}
-        uses: synopsys-sig/synopsys-action@download_bridge_test
+        uses: synopsys-sig/synopsys-action@SIGINT-864
         with:
           coverity_url: ${{ vars.COVERITY_URL }}
           coverity_user: ${{ secrets.COVERITY_USER }}
           coverity_passphrase: ${{ secrets.COVERITY_PASSPHRASE }}
-          coverity_project_name: ${{ github.event.repository.name }}
-          coverity_stream_name: ${{ github.event.repository.name }}-${{ github.ref_name }}
-          coverity_policy_view: 'Outstanding Issues'
+          #coverity_project_name: ${{ github.event.repository.name }}
+          #coverity_stream_name: ${{ github.event.repository.name }}-${{ github.ref_name }}
+          #coverity_policy_view: 'Outstanding Issues'
           coverity_waitForScan: false  # Used to support the async mode
           SYNOPSYS_BRIDGE_DOWNLOAD_URL : 'https://artifactory.internal.synopsys.com/artifactory/clops-local/clops.sig.synopsys.com/synopsys-bridge/2.8.52/synopsys-bridge-2.8.52-macosx.zip'
           ### Arbitrary product-related CL arguments
@@ -35,19 +35,19 @@ jobs:
           ### Uncomment below configuration if Synopsys Bridge diagnostic files needs to be uploaded
           # include_diagnostics: true  
       
-      - name: Coverity PR Scan
-        if: ${{ github.event_name == 'pull_request' }}
-        uses: synopsys-sig/synopsys-action@v1.11.0
-        with:
-          coverity_url: ${{ vars.COVERITY_URL }}
-          coverity_user: ${{ secrets.COVERITY_USER }}
-          coverity_passphrase: ${{ secrets.COVERITY_PASSPHRASE }}
-          coverity_project_name: ${{ github.event.repository.name }}
-          coverity_stream_name: ${{ github.event.repository.name }}-${{ github.base_ref }}
+     # - name: Coverity PR Scan
+        #if: ${{ github.event_name == 'pull_request' }}
+       # uses: synopsys-sig/synopsys-action@v1.11.0
+       # with:
+         # coverity_url: ${{ vars.COVERITY_URL }}
+          #coverity_user: ${{ secrets.COVERITY_USER }}
+          #coverity_passphrase: ${{ secrets.COVERITY_PASSPHRASE }}
+          #coverity_project_name: ${{ github.event.repository.name }}
+          #coverity_stream_name: ${{ github.event.repository.name }}-${{ github.base_ref }}
 
           ### Below configuration is used to enable feedback from Coverity security testing as pull request comment
-          coverity_prComment_enabled: true
-          github_token: ${{ secrets.GITHUB_TOKEN }} # Mandatory when coverity_prComment_enabled is set to 'true' 
+          #coverity_prComment_enabled: true
+          #github_token: ${{ secrets.GITHUB_TOKEN }} # Mandatory when coverity_prComment_enabled is set to 'true' 
           
           # project_directory: ${{ vars.PROJECT_DIRECTORY }}  
      

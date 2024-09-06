@@ -22,7 +22,7 @@ jobs:
           # srm_project_id: ${{ vars.PROJECT_ID }}
           # srm_branch_name: ${{ vars.BRANCH_NAME }}
           # srm_branch_parent: ${{ vars.BRANCH_PARENT }}
-          srm_waitForScan: false   # Used to support the async mode 
+          srm_waitForScan: true   # Used to support the async mode 
           # blackduck_execution_path: ${{ vars.BLACKDUCK_EXECUTION_PATH }}
           # coverity_execution_path: ${{ vars.COVERITY_EXECUTION_PATH }}    
           # project_directory: ${{ vars.PROJECT_DIRECTORY }}

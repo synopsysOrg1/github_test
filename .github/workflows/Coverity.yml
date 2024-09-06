@@ -22,7 +22,7 @@ jobs:
           #coverity_project_name: ${{ github.event.repository.name }}
           #coverity_stream_name: ${{ github.event.repository.name }}-${{ github.ref_name }}
           #coverity_policy_view: 'Outstanding Issues'
-          coverity_waitForScan: false  # Used to support the async mode
+          coverity_waitForScan: true  # Used to support the async mode
           SYNOPSYS_BRIDGE_DOWNLOAD_URL : 'https://artifactory.internal.synopsys.com/artifactory/clops-local/clops.sig.synopsys.com/synopsys-bridge/2.8.52/synopsys-bridge-2.8.52-macosx.zip'
           ### Arbitrary product-related CL arguments
           # coverity_build_command: mvn clean install

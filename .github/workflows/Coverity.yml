@@ -14,7 +14,7 @@ jobs:
       
       - name: Coverity Full Scan
         if: ${{ github.event_name != 'pull_request' }}
-        uses: synopsys-sig/synopsys-action@SIGINT-864
+        uses: synopsys-sig/synopsys-action@1.13.0-bug-fix
         with:
           coverity_url: ${{ vars.COVERITY_URL }}
           coverity_user: ${{ secrets.COVERITY_USER }}

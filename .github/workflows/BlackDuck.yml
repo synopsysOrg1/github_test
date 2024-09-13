@@ -25,7 +25,8 @@ jobs:
   
           ### Accepts Multiple Values
           blackduck_scan_failure_severities: 'BLOCKER,CRITICAL'
-          
+          ### SARIF report generation and upload to GitHub Adavanced Security: Uncomment below to enable
+          blackduck_reports_sarif_create: true # Create Black Duck SARIF report and upload it as artifact
           ### Arbitrary product-related CL arguments
           # blackduck_search_depth: 2
           # blackduck_args: '--detect.diagnostic=true'

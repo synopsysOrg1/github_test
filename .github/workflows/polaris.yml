@@ -19,7 +19,7 @@ jobs:
           #polaris_application_name: ${{ github.event.repository.name }}
           #polaris_project_name: ${{ github.event.repository.name }}
           polaris_assessment_types: "SCA,SAST"
-          polaris_waitForScan: false  # Used to support the async mode
+#          polaris_waitForScan: false  # Used to support the async mode
           # project_directory: ${{ vars.PROJECT_DIRECTORY }}
           ### Uncomment below configuration for source code upload 
           # polaris_assessment_mode: "SOURCE_UPLOAD"
@@ -27,14 +27,14 @@ jobs:
           # project_source_excludes: ${{ vars.PROJECT_SOURCE_EXCLUDES }} # Accepts Multiple Values
           # project_source_preserveSymLinks: true
           ### Uncomment below configuration if Synopsys Bridge diagnostic files needs to be uploaded
-          include_diagnostics: true
+#          include_diagnostics: true
           ## SARIF report generation and upload to GitHub Adavanced Security Tab: Uncomment below to enable
           polaris_reports_sarif_create: true
 #          polaris_reports_sarif_file_path: '/Users/tmp/report.sarif.json' # File path (including file name) where SARIF report is created.
 #          polaris_reports_sarif_severities: "CRITICAL,HIGH"
 #          polaris_reports_sarif_groupSCAIssues: true
 #          polaris_reports_sarif_issue_types: 'SCA, SAST'
-          polaris_upload_sarif_report: true
+#          polaris_upload_sarif_report: true
           github_token: ${{ secrets.GITHUB_TOKEN }} # Required when polaris_upload_sarif_report is set as true
           ### Signature scan
           #polaris_test_sca_type: "SCA-SIGNATURE"

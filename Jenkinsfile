@@ -1,6 +1,6 @@
 node {
       checkout scm
-      stage("black-security-scan") {
-        black_scan product: "blackduck"
+      stage("blackduck-security-scan") {
+        blackduck_scan product: "blackduck"
       }
 }

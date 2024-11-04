@@ -6,7 +6,7 @@ pipeline {
        stage("Black-Duck-Security-Scan") {
            steps {
                script {
-                    security_scan product: 'blackducksca', blackducksca_prComment_enabled: true
+                    security_scan product: 'blackducksca'
                     
                }
            }

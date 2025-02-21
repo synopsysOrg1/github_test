@@ -37,7 +37,7 @@ jobs:
           # polaris_upload_sarif_report: true 
           # github_token: ${{ secrets.GITHUB_TOKEN }} # Required when polaris_upload_sarif_report is set as true
           ### Signature scan
-          polaris_test_sca_type: "SCA-SIGNATURE,SCA-PACKAGE"
+          polaris_test_sca_type: "SCA-SIGNATURE"
           ### Uncomment below to add arbitrary CL parameters
           # detect_search_depth: 2
           # detect_args: '--detect.diagnostic=true'

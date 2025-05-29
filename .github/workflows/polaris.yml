@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v3
       - name: Polaris Full Scan
         if: ${{ github.event_name != 'pull_request' }}
-        uses: blackduck-inc/black-duck-security-scan@custom-header
+        uses: blackduck-inc/black-duck-security-scan@SIGINT-2752-updated
         with:
           polaris_server_url: ${{ vars.POLARIS_SERVER_URL }}
           polaris_access_token: ${{ secrets.POLARIS_ACCESS_TOKEN }}

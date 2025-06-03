@@ -27,7 +27,7 @@ jobs:
           # project_source_archive: ${{ vars.PROJECT_SOURCE_ARCHIVE }}
           # project_source_excludes: ${{ vars.PROJECT_SOURCE_EXCLUDES }} # Accepts Multiple Values
           # project_source_preserveSymLinks: true
-          ### Uncomment below configuration if Bridge diagnostic files needs to be uploaded
+          #### Uncomment below configuration if Bridge diagnostic files needs to be uploaded
           include_diagnostics: true
           ### SARIF report generation and upload to GitHub Adavanced Security Tab: Uncomment below to enable
           polaris_reports_sarif_create: true  

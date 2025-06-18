@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: Checkout Source
         uses: actions/checkout@v3
-      - name: Polaris Full Scan
+      - name: Polaris PR Scan
         if: ${{ github.event_name != 'pull_request' }}
         uses: blackduck-inc/black-duck-security-scan@SIGINT-2752-updated
         with:
